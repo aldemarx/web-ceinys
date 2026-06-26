@@ -212,8 +212,8 @@ function ProjectCard({ p }) {
         <p className="pcard-sub">{p.tipo} · {p.descripcion}</p>
       </div>
       <div className="pcard-actions">
-        <a className="pcard-act secondary" href="#">{Ic.download}Brochure</a>
-        <a className="pcard-act primary" href="#">Ver proyecto {Ic.arrow}</a>
+        <a className="pcard-act secondary" href={p.brochure || '#'}>{Ic.download}Brochure</a>
+        <a className="pcard-act primary" href={p.url || '#'}>Ver proyecto {Ic.arrow}</a>
       </div>
     </article>
   );
@@ -505,5 +505,4 @@ function App() {
     </div>
   );
 }
-
 ReactDOM.createRoot(document.getElementById('root')).render(<App />);

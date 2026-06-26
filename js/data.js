@@ -19,7 +19,7 @@ window.CEINYS_PROJECTS = [
   { id: 'altos-sacta',  brand: 'altos-sacta',  nombre: 'Altos de Sacta',    tipo: 'Casas de campo',
     chip: 'En venta',           chipTone: 'venta',
     descripcion: 'Extensión natural de Valle Sacta. Lotes amplios y áreas verdes generosas.',
-    zona: 'Ica', photoKey: 'photoAltosSacta' },
+    zona: 'Ica', photoKey: 'photoAltosSacta', url: 'proyectoaltos.html' },
   { id: 'los-sauces',   brand: 'los-sauces',   nombre: 'Los Sauces',        tipo: 'Condominio entry-level',
     chip: 'Etapa 5 en venta',   chipTone: 'etapa',
     descripcion: '4 etapas entregadas al 100%. Lotes de 200 m².',
