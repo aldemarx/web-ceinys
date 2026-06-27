@@ -16,6 +16,7 @@ window.__resources = {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CEINYS · Constructora e Inmobiliaria · Ica y Paracas</title>
+
 <meta name="description" content="Constructora e inmobiliaria peruana con 9+ años de operación en el sur chico del Perú. Seis proyectos activos en Ica y Paracas, con respaldo legal verificable.">
 <style>
 @font-face {
@@ -676,6 +677,7 @@ section.ink .eyebrow { color: var(--ceinys-cian-500); }
 .btn-secondary:hover { background: var(--grafito-800); transform: translateY(-1px); color: white; text-decoration: none; }
 .btn-ghost { background: transparent; color: var(--grafito-800); border: 1px solid var(--grafito-300); }
 .btn-ghost:hover { background: var(--grafito-100); border-color: var(--grafito-400); color: var(--grafito-900); text-decoration: none; }
+.header-cta-desktop .btn-ghost:hover { background: var(--ceinys-naranja-050); border-color: var(--ceinys-naranja-500); color: var(--ceinys-naranja-600); }
 .btn-ghost-light { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.55); }
 .btn-ghost-light:hover { background: rgba(255,255,255,0.10); border-color: white; color: white; text-decoration: none; }
 .btn-link {
@@ -718,6 +720,80 @@ section.ink .eyebrow { color: var(--ceinys-cian-500); }
   cursor: pointer; color: var(--grafito-900);
 }
 .header-burger svg { width: 28px; height: 28px; stroke-width: 1.5; }
+
+/* Dropdown Proyectos — desktop */
+.nav-dropdown { position: relative; display: flex; align-items: center; }
+.nav-dropdown-toggle {
+  display: flex; align-items: center; gap: 4px;
+  font: 500 14px/1 var(--font-sans); color: var(--grafito-700);
+  cursor: pointer; padding: 8px 0; position: relative;
+  background: none; border: 0;
+}
+.nav-dropdown-toggle::after {
+  content: ''; position: absolute; left: 0; right: 100%; bottom: 0;
+  height: 2px; background: var(--ceinys-cian-500); border-radius: 1px;
+  transition: right var(--dur-base) var(--ease-out);
+}
+.nav-dropdown:hover .nav-dropdown-toggle { color: var(--grafito-900); }
+.nav-dropdown:hover .nav-dropdown-toggle::after { right: 0; }
+.nav-dropdown-chevron { width: 14px; height: 14px; stroke-width: 2.2; transition: transform 200ms ease; }
+.nav-dropdown:hover .nav-dropdown-chevron { transform: rotate(180deg); }
+.nav-dropdown::after {
+  content: ''; position: absolute; top: 100%; left: -20px; right: -20px; height: 14px;
+}
+.nav-dropdown-menu {
+  position: absolute; top: calc(100% + 14px); left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: white; border: 1px solid var(--border-soft); border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(20,22,28,0.10), 0 1px 4px rgba(20,22,28,0.05);
+  min-width: 210px; padding: 6px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+  z-index: 200;
+}
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1; pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-menu a {
+  display: block; padding: 10px 14px; border-radius: 8px;
+  font: 500 13.5px/1 var(--font-sans);
+  color: var(--grafito-700); text-decoration: none;
+  transition: background 130ms ease, color 130ms ease;
+}
+.nav-dropdown-menu a::after { display: none !important; }
+.nav-dropdown-menu a:hover { background: #F0FAFD; color: var(--ceinys-cian-500); }
+
+/* Mobile overlay — accordion Proyectos */
+.mobile-overlay-dropdown { width: 100%; display: flex; flex-direction: column; align-items: center; }
+.mobile-overlay-dropdown-toggle {
+  display: flex; align-items: center; gap: 10px;
+  font: 600 28px/1.1 var(--font-sans); color: white;
+  letter-spacing: -0.005em;
+  opacity: 0; transform: translateY(12px);
+  transition: opacity 380ms var(--ease-out), transform 380ms var(--ease-out), color 160ms var(--ease-out);
+  background: none; border: 0; cursor: pointer; padding: 0;
+}
+.mobile-overlay.open .mobile-overlay-dropdown-toggle { opacity: 1; transform: translateY(0); }
+.mobile-overlay-dropdown-toggle:hover { color: var(--ceinys-cian-500); }
+.mobile-dropdown-chevron { width: 22px; height: 22px; stroke-width: 2.2; transition: transform 240ms ease; }
+.mobile-overlay-dropdown.open .mobile-dropdown-chevron { transform: rotate(180deg); }
+.mobile-overlay-sub {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  width: 100%; padding: 0 var(--gutter);
+  max-height: 0; overflow: hidden;
+  transition: max-height 320ms ease, padding 320ms ease;
+}
+.mobile-overlay-dropdown.open .mobile-overlay-sub {
+  max-height: 340px; padding-top: 14px; padding-bottom: 4px;
+}
+.mobile-overlay-sub a {
+  font: 500 16px/1.2 var(--font-sans); color: rgba(255,255,255,0.72);
+  text-decoration: none; padding: 6px 0; text-align: center;
+  transition: color 150ms ease;
+  opacity: 1 !important; transform: none !important;
+}
+.mobile-overlay-sub a:hover { color: var(--ceinys-cian-500); }
 
 @media (max-width: 960px) {
   .header-nav, .header-cta-desktop { display: none; }
@@ -1185,6 +1261,7 @@ section.ink .eyebrow { color: var(--ceinys-cian-500); }
 }
 .referidos-text p { margin: 0; max-width: 620px; color: var(--grafito-600); }
 
+
 /* =====================================================
    FOOTER — adapted from Los Portales (grafito, no azul)
    ===================================================== */
@@ -1264,6 +1341,7 @@ section.ink .eyebrow { color: var(--ceinys-cian-500); }
 .footer-bottom .legal-links { display: flex; gap: 20px; }
 .footer-bottom a { color: rgba(255,255,255,0.6); text-decoration: none; }
 .footer-bottom a:hover { color: white; text-decoration: underline; text-underline-offset: 3px; }
+
 
 /* =====================================================
    PAGE ENTRANCE

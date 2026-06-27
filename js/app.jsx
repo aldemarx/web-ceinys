@@ -35,11 +35,19 @@ const Ic = {
    NAVBAR
    ---------------------------------------------------------------- */
 const NAV_LINKS = [
-  { id: 'proyectos', label: 'Proyectos' },
   { id: 'nosotros', label: 'Nosotros' },
-  { id: 'confianza', label: 'Confianza' },
+  { id: 'confianza', label: 'Respaldo Legal' },
   { id: 'referidos', label: 'Referidos' },
   { id: 'contacto', label: 'Contacto' },
+];
+
+const PROJECTS = [
+  { label: 'La Palma Paracas',  href: '#proyectos' },
+  { label: 'Sol de Carhuaz',    href: '#proyectos' },
+  { label: 'Monte Alegre',      href: '#proyectos' },
+  { label: 'Valle Sacta',       href: '#proyectos' },
+  { label: 'Altos de Sacta',    href: './proyectoaltos.html' },
+  { label: 'Los Sauces',        href: '#proyectos' },
 ];
 
 function NavBar({ onOpenMenu }) {
@@ -64,6 +72,22 @@ function NavBar({ onOpenMenu }) {
           <img src={window.__resources.logoCeinys} alt="CEINYS" />
         </a>
         <nav className="header-nav">
+          <div className="nav-dropdown">
+            <button className="nav-dropdown-toggle">
+              Proyectos
+              <svg className="nav-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <div className="nav-dropdown-menu">
+              {PROJECTS.map(p => (
+                <a key={p.label} href={p.href}
+                   onClick={p.href.startsWith('#') ? go(p.href.slice(1)) : undefined}>
+                  {p.label}
+                </a>
+              ))}
+            </div>
+          </div>
           {NAV_LINKS.map(l => (
             <a key={l.id} href={`#${l.id}`} onClick={go(l.id)}>{l.label}</a>
           ))}
@@ -82,11 +106,14 @@ function NavBar({ onOpenMenu }) {
 }
 
 /* ---------------------------------------------------------------
-   MOBILE OVERLAY (Albamar reference, grafito instead of azul)
+   MOBILE OVERLAY (Albamar reference, grafito instead de azul)
    ---------------------------------------------------------------- */
 function MobileOverlay({ open, onClose }) {
+  const [proyOpen, setProyOpen] = useState(false);
+
   useEffect(() => {
     document.body.classList.toggle('no-scroll', open);
+    if (!open) setProyOpen(false);
     return () => document.body.classList.remove('no-scroll');
   }, [open]);
 
@@ -108,9 +135,27 @@ function MobileOverlay({ open, onClose }) {
         </button>
       </div>
       <nav className="mobile-overlay-nav">
+        <div className={`mobile-overlay-dropdown ${proyOpen ? 'open' : ''}`}>
+          <button className="mobile-overlay-dropdown-toggle"
+                  style={{ transitionDelay: open ? '120ms' : '0ms' }}
+                  onClick={() => setProyOpen(!proyOpen)}>
+            Proyectos
+            <svg className="mobile-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+          <div className="mobile-overlay-sub">
+            {PROJECTS.map(p => (
+              <a key={p.label} href={p.href}
+                 onClick={p.href.startsWith('#') ? click(p.href.slice(1)) : onClose}>
+                {p.label}
+              </a>
+            ))}
+          </div>
+        </div>
         {NAV_LINKS.map((l, i) => (
           <a key={l.id} href={`#${l.id}`}
-             style={{ transitionDelay: open ? `${120 + i*60}ms` : '0ms' }}
+             style={{ transitionDelay: open ? `${180 + i*60}ms` : '0ms' }}
              onClick={click(l.id)}>
             {l.label}
           </a>
