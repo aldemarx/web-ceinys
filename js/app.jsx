@@ -42,7 +42,7 @@ const NAV_LINKS = [
 ];
 
 const PROJECTS = [
-  { label: 'La Palma Paracas',  href: '#proyectos' },
+  { label: 'La Palma Paracas',  href: './lapalmaparacas.html' },
   { label: 'Sol de Carhuaz',    href: '#proyectos' },
   { label: 'Monte Alegre',      href: '#proyectos' },
   { label: 'Valle Sacta',       href: '#proyectos' },

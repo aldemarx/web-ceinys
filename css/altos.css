@@ -1,7 +1,7 @@
 /* --- ESTILOS GLOBALES Y VARIABLES --- */
 :root {
-    --primary-color: #d97706;
-    --primary-hover: #b45309;
+    --primary-color: #E8960A;
+    --primary-hover: #C97D00;
     --bg-light: #fafaf9;
     --dark-bg: #111111;
     --text-main: #1c1917;
@@ -265,64 +265,103 @@ body.no-scroll { overflow: hidden; }
 
 /* --- HERO SECTION --- */
 .hero {
-    padding: 60px 0;
+    padding: 64px 0 72px;
 }
 
 .hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 60px;
     align-items: center;
 }
 
-.tag-sale {
-    background: #fef3c7;
-    color: var(--primary-color);
-    padding: 4px 12px;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 4px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-bottom: 15px;
+/* Badge + ubicación inline */
+.hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
 }
 
-.subtitle-location {
-    color: var(--text-muted); 
-    font-size: 14px; 
+.tag-sale {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 999px;
     text-transform: uppercase;
+    letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.hero-location {
+    color: var(--text-muted);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+}
+
+/* Logo del proyecto */
+.hero-logo-wrap {
+    margin-bottom: 8px;
+}
+
+.hero-project-logo {
+    height: 64px;
+    display: block;
+    object-fit: contain;
+}
+
+/* Subtítulo itálico naranja */
+.hero-category {
+    color: var(--primary-color);
+    font-style: italic;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .hero-title {
-    font-size: 42px;
+    font-size: clamp(30px, 3.8vw, 48px);
     font-weight: 800;
-    line-height: 1.1;
-    margin-top: 10px;
+    line-height: 1.08;
     margin-bottom: 20px;
     color: var(--dark-bg);
 }
 
 .hero-description {
     color: var(--text-muted);
-    font-size: 16px;
-    margin-bottom: 30px;
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 32px;
+    max-width: 480px;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 15px;
-    margin-bottom: 30px;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
 }
 
 .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background: var(--primary-color);
     color: white;
     border: none;
-    padding: 14px 28px;
+    padding: 14px 24px;
     border-radius: 8px;
     font-weight: 600;
+    font-size: 14px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 120ms ease;
 }
 
 .btn-primary:hover {
@@ -330,20 +369,101 @@ body.no-scroll { overflow: hidden; }
 }
 
 .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background: white;
-    border: 1px solid var(--border-color);
-    padding: 14px 28px;
+    border: 1.5px solid var(--border-color);
+    padding: 14px 24px;
     border-radius: 8px;
     font-weight: 600;
+    font-size: 14px;
     cursor: pointer;
+    transition: border-color 120ms ease, background 120ms ease;
+    color: var(--text-main);
+}
+
+.btn-secondary:hover {
+    border-color: #aaa;
+    background: #f8f7f5;
+}
+
+/* Fila de coordenadas con línea naranja */
+.hero-coords-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.coords-line {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: var(--primary-color);
+    flex-shrink: 0;
+    border-radius: 2px;
 }
 
 .coordinates {
     color: var(--text-muted);
     font-size: 11px;
-    font-family: monospace;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
+/* Caja render con badge */
+.hero-render-wrap {
+    position: relative;
+}
+
+.hero-render-box {
+    border: 1.5px solid #ddd8d0;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    height: 430px;
+    background: #eeebe5;
+}
+
+.hero-render-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Placeholder mientras no hay imagen del render */
+.hero-render-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    color: #b0aba4;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.render-badge {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid #ddd8d0;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #666;
+    backdrop-filter: blur(4px);
+    letter-spacing: 0.02em;
+}
+
+/* Placeholder legacy (usado en map, master plan, etc.) */
 .placeholder-render {
     background: #e7e5e4;
     border-radius: 12px;
@@ -767,10 +887,31 @@ th {
     .header-burger { display: flex; }
 }
 
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+    /* Imagen aparece primero en móvil */
+    .hero-render-wrap { order: -1; }
+    .hero-render-box { height: 300px; }
+    .hero-title { font-size: clamp(28px, 7vw, 40px); }
+}
+
 @media (max-width: 768px) {
     body { padding-top: 80px; }
-    .hero-grid, .grid-reasons, .entorno-grid, .master-grid, .amenidades-grid, .club-grid, .finan-grid, .legal-grid {
+    .hero { padding: 40px 0 56px; }
+    .grid-reasons, .entorno-grid, .master-grid, .amenidades-grid, .club-grid, .finan-grid, .legal-grid {
         grid-template-columns: 1fr !important;
     }
+    .hero-buttons { flex-direction: column; align-items: flex-start; }
+    .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
     .stats-bar { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .hero-render-box { height: 260px; }
+    .hero-description { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 26px; }
+    .hero-render-box { height: 220px; }
 }

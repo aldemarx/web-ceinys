@@ -23,7 +23,7 @@
                         </svg>
                     </button>
                     <div class="nav-dropdown-menu">
-                        <a href="./Index.html#proyectos">La Palma Paracas</a>
+                        <a href="./lapalmaparacas.html">La Palma Paracas</a>
                         <a href="./Index.html#proyectos">Sol de Carhuaz</a>
                         <a href="./Index.html#proyectos">Monte Alegre</a>
                         <a href="./Index.html#proyectos">Valle Sacta</a>
@@ -62,7 +62,7 @@
                     </svg>
                 </button>
                 <div class="mobile-overlay-sub">
-                    <a href="./Index.html#proyectos">La Palma Paracas</a>
+                    <a href="./lapalmaparacas.html">La Palma Paracas</a>
                     <a href="./Index.html#proyectos">Sol de Carhuaz</a>
                     <a href="./Index.html#proyectos">Monte Alegre</a>
                     <a href="./Index.html#proyectos">Valle Sacta</a>
@@ -96,19 +96,60 @@
     <!-- Hero del Proyecto -->
     <section class="hero container">
         <div class="hero-grid">
-            <div>
-                <span class="tag-sale">● En Venta</span>
-                <p class="subtitle-location">Distrito de Santiago • Ica</p>
-                <h1 class="hero-title">Casas de campo en el KM 325 de la Panamericana Sur</h1>
-                <p class="hero-description">491 lotes amplios de 238 a 961 m² rodeados de 978,000 m² de áreas verdes. Extensión natural de Valle Sacta, en el Distrito de Santiago, Ica.</p>
-                <div class="hero-buttons">
-                    <button class="btn-primary">Descargar brochure</button>
-                    <button class="btn-secondary">Hablar con un asesor</button>
+            <div class="hero-content">
+                <!-- Badge + ubicación en la misma fila -->
+                <div class="hero-meta">
+                    <span class="tag-sale">● En Venta</span>
+                    <span class="hero-location">Distrito de Santiago · Ica</span>
                 </div>
-                <small class="coordinates">14°10' S · 75°45' O · DISTRITO DE SANTIAGO · ICA</small>
+
+                <!-- Logo del proyecto -->
+                <div class="hero-logo-wrap">
+                    <img src="./images/logoAltosSacta.png" alt="Altos de Sacta" class="hero-project-logo" onerror="this.style.display='none'">
+                </div>
+
+                <!-- Subtítulo itálico naranja -->
+                <p class="hero-category">Casas de campo</p>
+
+                <h1 class="hero-title">Casas de campo<br>en el KM 325 de la<br>Panamericana Sur</h1>
+                <p class="hero-description">491 lotes amplios de 238 a 961 m² rodeados de 978,000 m² de áreas verdes. Extensión natural de Valle Sacta, en el Distrito de Santiago, Ica.</p>
+
+                <div class="hero-buttons">
+                    <button class="btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3v13M7 11l5 5 5-5"/><path d="M4 20h16"/>
+                        </svg>
+                        Descargar brochure
+                    </button>
+                    <button class="btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="18" height="18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                        </svg>
+                        Hablar con un asesor
+                    </button>
+                </div>
+
+                <!-- Coordenadas con línea naranja -->
+                <div class="hero-coords-row">
+                    <span class="coords-line"></span>
+                    <small class="coordinates">14°10' S · 75°45' O · DISTRITO DE SANTIAGO · ICA</small>
+                </div>
             </div>
-            <div class="placeholder-render">
-                <img src="./images/photoAltosSacta2.jpg" alt="Render Principal Altos de Sacta" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+
+            <!-- Imagen con badge -->
+            <div class="hero-render-wrap">
+                <div class="hero-render-box">
+                    <!-- Reemplaza esta sección con tu imagen cuando esté lista -->
+                    <div class="hero-render-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.4" width="36" height="36">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M3 15l5-5 4 4 3-3 6 6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="8.5" cy="8.5" r="1.5" fill="#bbb" stroke="none"/>
+                        </svg>
+                        <span>Render principal del proyecto</span>
+                    </div>
+                    <span class="render-badge">Render referencial</span>
+                </div>
             </div>
         </div>
     </section>

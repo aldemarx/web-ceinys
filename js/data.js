@@ -3,7 +3,7 @@ window.CEINYS_PROJECTS = [
   { id: 'la-palma',     brand: 'la-palma',     nombre: 'La Palma Paracas',  tipo: 'Lotes residenciales',
     chip: 'En venta',           chipTone: 'venta',
     descripcion: '120 a 318 m² frente al corredor costero de Paracas.',
-    zona: 'Paracas, Pisco', photoKey: 'photoLaPalma' },
+    zona: 'Paracas, Pisco', photoKey: 'photoLaPalma', url: 'lapalmaparacas.html' },
   { id: 'sol-carhuaz',  brand: 'sol-carhuaz',  nombre: 'Sol de Carhuaz',    tipo: 'Megaproyecto urbano',
     chip: 'En venta · Etapa 4', chipTone: 'etapa',
     descripcion: '5 etapas con servicios completos. Lotes desde 104 m².',
