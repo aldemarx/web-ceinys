@@ -241,6 +241,15 @@ function StatsBanda() {
    PROJECT CARD
    ---------------------------------------------------------------- */
 function ProjectCard({ p }) {
+  const goToProject = (e) => {
+    if (p.url) {
+      e.preventDefault();
+      window.location.assign(p.url);
+    } else {
+      e.preventDefault();
+    }
+  };
+
   return (
     <article className="pcard" data-brand={p.brand}>
       <div className="pcard-media">
@@ -257,8 +266,13 @@ function ProjectCard({ p }) {
         <p className="pcard-sub">{p.tipo} · {p.descripcion}</p>
       </div>
       <div className="pcard-actions">
-        <a className="pcard-act secondary" href={p.brochure || '#'}>{Ic.download}Brochure</a>
-        <a className="pcard-act primary" href={p.url || '#'}>Ver proyecto {Ic.arrow}</a>
+        <a className="pcard-act secondary" href={p.brochure || '#'}
+           onClick={!p.brochure ? (e) => e.preventDefault() : undefined}>
+          {Ic.download}Brochure
+        </a>
+        <a className="pcard-act primary" href={p.url || '#'} onClick={goToProject}>
+          Ver proyecto {Ic.arrow}
+        </a>
       </div>
     </article>
   );
