@@ -478,7 +478,7 @@ function Footer() {
           <div>
             <h5>Proyectos</h5>
             <ul>
-              <li><a href="#">La Palma Paracas</a></li>
+              <li><a href="./lapalmaparacas.html">La Palma Paracas</a></li>
               <li><a href="#">Sol de Carhuaz</a></li>
               <li><a href="#">Monte Alegre</a></li>
               <li><a href="#">Valle Sacta</a></li>
