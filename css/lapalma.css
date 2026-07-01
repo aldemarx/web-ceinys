@@ -1003,7 +1003,7 @@ th { font-size: 12px; text-transform: uppercase; color: var(--text-muted); }
     .finan-grid { grid-template-columns: repeat(2, 1fr); }
     .legal-grid { grid-template-columns: repeat(2, 1fr); }
     .amenidades-grid { grid-template-columns: repeat(2, 1fr); }
-    .section-padding { padding: 64px 0; }
+    .section-padding { padding: 64px 20px; }
 }
 
 /* Tablet — hero apilado */
@@ -1017,8 +1017,8 @@ th { font-size: 12px; text-transform: uppercase; color: var(--text-muted); }
 /* Mobile 768px */
 @media (max-width: 768px) {
     body { padding-top: 80px; }
-    .section-padding { padding: 48px 0; }
-    .hero { padding: 36px 0 48px; }
+    .section-padding { padding: 48px 20px; }
+    .hero { padding: 36px 20px 48px; }
     .map-wrapper { height: 260px; }
     .master-box { padding: 20px 16px; }
     .grid-reasons, .master-grid { grid-template-columns: 1fr !important; }
@@ -1045,7 +1045,8 @@ th { font-size: 12px; text-transform: uppercase; color: var(--text-muted); }
 
 /* Mobile muy pequeño 480px */
 @media (max-width: 480px) {
-    .section-padding { padding: 40px 0; }
+    .section-padding { padding: 40px 16px; }
+    .hero { padding: 28px 16px 40px; }
     .hero-title { font-size: 26px; }
     .hero-slider { height: 220px; }
     .stat-item h2 { font-size: 22px; }
