@@ -553,16 +553,25 @@ body.no-scroll { overflow: hidden; }
 
 /* --- STATS BAR --- */
 .stats-bar {
-    background: #ace9ff;
-    color: #0B3A4D;
+    background: #3CB3E0;
+    color: #fff;
     padding: 40px 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     text-align: center;
 }
-.stat-item h2 { font-size: 38px; font-weight: 800; letter-spacing: -0.01em; color: #0B3A4D; }
-.stat-item h2 span { color: var(--primary-color); }
-.stat-item p { font-size: 12px; color: #073245; text-transform: uppercase; margin-top: 5px; font-weight: 600; }
+.stat-item { padding: 0 20px; position: relative; }
+.stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 50%;
+    transform: translateY(-50%);
+    height: 44%; width: 1px;
+    background: rgba(255,255,255,0.22);
+}
+.stat-item h2 { font-size: 38px; font-weight: 800; letter-spacing: -0.01em; color: #fff; }
+.stat-item h2 span { color: #fff; }
+.stat-item p { font-size: 12px; color: rgba(255,255,255,0.85); text-transform: uppercase; margin-top: 5px; font-weight: 600; }
 
 /* --- SECTIONS --- */
 .section-padding { padding: 80px 0; }
@@ -576,7 +585,7 @@ body.no-scroll { overflow: hidden; }
 }
 
 .section-title {
-    font-size: 32px;
+    font-size: clamp(22px, 4vw, 32px);
     margin-top: 5px;
     margin-bottom: 40px;
     font-weight: 700;
@@ -986,11 +995,18 @@ th { font-size: 12px; text-transform: uppercase; color: var(--text-muted); }
 @media (max-width: 980px) { .footer-grid { grid-template-columns: 1fr 1fr; row-gap: 40px; } }
 @media (max-width: 540px) { .footer-grid { grid-template-columns: 1fr; } }
 
+/* Tablet grande — navbar oculto + grids a 2 columnas */
 @media (max-width: 960px) {
     .header-nav, .header-cta-desktop { display: none; }
     .header-burger { display: flex; }
+    .entorno-grid { grid-template-columns: 1fr; gap: 32px; }
+    .finan-grid { grid-template-columns: repeat(2, 1fr); }
+    .legal-grid { grid-template-columns: repeat(2, 1fr); }
+    .amenidades-grid { grid-template-columns: repeat(2, 1fr); }
+    .section-padding { padding: 64px 0; }
 }
 
+/* Tablet — hero apilado */
 @media (max-width: 900px) {
     .hero-grid { grid-template-columns: 1fr; gap: 36px; }
     .hero-render-wrap { order: -1; }
@@ -998,22 +1014,42 @@ th { font-size: 12px; text-transform: uppercase; color: var(--text-muted); }
     .hero-title { font-size: clamp(28px, 7vw, 40px); }
 }
 
+/* Mobile 768px */
 @media (max-width: 768px) {
     body { padding-top: 80px; }
-    .hero { padding: 40px 0 56px; }
-    .grid-reasons, .entorno-grid, .master-grid, .amenidades-grid, .finan-grid, .legal-grid {
-        grid-template-columns: 1fr !important;
-    }
-    .hero-buttons { flex-direction: column; align-items: flex-start; }
+    .section-padding { padding: 48px 0; }
+    .hero { padding: 36px 0 48px; }
+    .map-wrapper { height: 260px; }
+    .master-box { padding: 20px 16px; }
+    .grid-reasons, .master-grid { grid-template-columns: 1fr !important; }
+    .finan-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .amenidades-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .legal-grid { grid-template-columns: 1fr !important; }
+    .hero-buttons { flex-direction: column; align-items: stretch; }
     .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
-    .stats-bar { grid-template-columns: 1fr 1fr; gap: 20px; }
-    .hero-render-box { height: 260px; }
+    .stats-bar { grid-template-columns: 1fr 1fr; padding: 28px 16px; }
+    .stat-item { padding: 12px 8px; }
+    .stat-item::after { display: none; }
+    .stat-item h2 { font-size: 28px; }
+    .stat-item p { font-size: 10px; }
     .hero-description { max-width: 100%; }
+    .section-title { margin-bottom: 24px; }
+    .master-grid > div { overflow-x: auto; }
 }
 
+/* Mobile pequeño 540px */
+@media (max-width: 540px) {
+    .finan-grid { grid-template-columns: 1fr !important; }
+    .amenidades-grid { grid-template-columns: 1fr !important; }
+}
+
+/* Mobile muy pequeño 480px */
 @media (max-width: 480px) {
+    .section-padding { padding: 40px 0; }
     .hero-title { font-size: 26px; }
     .hero-slider { height: 220px; }
+    .stat-item h2 { font-size: 22px; }
+    .stat-item p { font-size: 9px; }
 }
 
 /* --- WHATSAPP FLOTANTE --- */
