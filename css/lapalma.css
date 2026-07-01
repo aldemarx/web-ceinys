@@ -330,7 +330,7 @@ body.no-scroll { overflow: hidden; }
     font-weight: 800;
     line-height: 1.08;
     margin-bottom: 20px;
-    color: #248F36;
+    color: #3CB3E0;
 }
 
 .hero-description {
@@ -352,7 +352,7 @@ body.no-scroll { overflow: hidden; }
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--primary-color);
+    background: #3CB3E0;
     color: white;
     border: none;
     padding: 14px 24px;
@@ -362,23 +362,23 @@ body.no-scroll { overflow: hidden; }
     cursor: pointer;
     transition: background 120ms ease;
 }
-.btn-primary:hover { background: var(--primary-hover); }
+.btn-primary:hover { background: #2898C2; }
 
 .btn-secondary {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     background: white;
-    border: 1.5px solid var(--border-color);
+    border: 1.5px solid #3CB3E0;
     padding: 14px 24px;
     border-radius: 8px;
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
     transition: border-color 120ms ease, background 120ms ease;
-    color: var(--text-main);
+    color: #3CB3E0;
 }
-.btn-secondary:hover { border-color: #aaa; background: #f8f7f5; }
+.btn-secondary:hover { border-color: #2898C2; background: rgba(60,179,224,0.06); color: #2898C2; }
 
 .hero-coords-row {
     display: flex;
@@ -918,7 +918,7 @@ th { font-size: 12px; text-transform: uppercase; color: var(--text-muted); }
 
 /* === CTA BANNER VERDE (La Palma) === */
 .cta-banner {
-    background-color: #157A3E;
+    background-color: #3CB3E0;
     padding: 56px 0;
 }
 .cta-banner-inner {
@@ -944,7 +944,7 @@ th { font-size: 12px; text-transform: uppercase; color: var(--text-muted); }
 .cta-banner-buttons { display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap; }
 .btn-cta-primary {
     display: inline-flex; align-items: center; gap: 8px;
-    background: white; color: #157A3E;
+    background: white; color: #1a7a9e;
     border: none; border-radius: 6px;
     padding: 13px 22px; font-size: 0.9rem; font-weight: 700;
     cursor: pointer; transition: background 120ms ease;
